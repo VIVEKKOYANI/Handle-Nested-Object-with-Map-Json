@@ -37,7 +37,20 @@ class App extends React.Component{
   render(){
     return (
       <div className="App">
-        
+        <h1>Handel Nested Object React</h1>
+        {
+          this.state.data.map((item) => 
+        <div>{item.name}
+        <ul>
+          {item.details.map((sub) =>
+          <li>
+            {sub.info}
+          </li>
+          )}
+        </ul>
+        </div>
+          )
+        }     
       </div>
     )
   }
